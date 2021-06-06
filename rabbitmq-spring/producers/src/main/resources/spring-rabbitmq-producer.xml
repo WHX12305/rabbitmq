@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:rabbitmq="http://www.springframework.org/schema/rabbit"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/rabbit
+        http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+    <!--    加载配置文件-->
+    <context:property-placeholder location="rabbitmq.properties"/>
+    <!--    定义rabbitmqFactory-->
+    <rabbitmq:connection-factory id="connectionFactory"
+                                 host="${rabbitmq.host}"
+                                 port="${rabbitmq.port}"
+                                 username="${rabbitmq.username}"
+                                 password="${rabbitmq.password}"
+                                 virtual-host="${rabbitmq.virtual-host}"
+                                 publisher-confirms="true"
+                                 publisher-returns="true"/>
+    <!--    定义交换机和队列-->
+    <rabbitmq:admin connection-factory="connectionFactory"/>
+
+    <!--    定义持久化队列，不存在则自动创建，不绑定到交换机则绑定到默认交换机
+            默认交换机类型为direct，名字为“”，路由键为队列的名称-->
+    <rabbitmq:queue id="spring_queue" name="spring_queue" auto-declare="true"/>
+    <!--    id bean的名称
+            name queue的名称
+            auto-declare自动创建
+            auto-delete自动删除
+            exclusive是否独占
+            durable 是否持久化
+            -->
+
+    <!--    广播队列fanout-->
+    <rabbitmq:queue id="spring_fanout_queue_1" name="spring_fanout_queue_1" auto-declare="true"/>
+    <rabbitmq:queue id="spring_fanout_queue_2" name="spring_fanout_queue_2" auto-declare="true"/>
+    <!--    绑定交换机-->
+    <rabbitmq:fanout-exchange name="spring_fanout_exchange" id="spring_fanout_exchange" auto-declare="true">
+        <rabbitmq:bindings>
+            <rabbitmq:binding queue="spring_fanout_queue_1"/>
+            <rabbitmq:binding queue="spring_fanout_queue_2"/>
+        </rabbitmq:bindings>
+    </rabbitmq:fanout-exchange>
+    <!--    topic通配符匹配-->
+    <rabbitmq:queue id="spring_topic_queue_1" name="spring_topic_queue_1" auto-declare="true"/>
+    <rabbitmq:queue id="spring_topic_queue_2" name="spring_topic_queue_2" auto-declare="true"/>
+    <rabbitmq:queue id="spring_topic_queue_3" name="spring_topic_queue_3" auto-declare="true"/>
+    <rabbitmq:topic-exchange name="spring_topic_exchange" id="spring_topic_exchange" auto-declare="true">
+        <rabbitmq:bindings>
+            <rabbitmq:binding pattern="hello.*" queue="spring_topic_queue_1"/>
+            <rabbitmq:binding pattern="hello.#" queue="spring_topic_queue_2"/>
+            <rabbitmq:binding pattern="smile.#" queue="spring_topic_queue_3"/>
+        </rabbitmq:bindings>
+    </rabbitmq:topic-exchange>
+
+    <!--    template-->
+    <rabbitmq:template id="rabbitTemplate" connection-factory="connectionFactory"/>
+
+    <!--    可靠性投递（生产端）-->
+    <rabbitmq:queue id="confirm_queue" name="confirm_queue"/>
+    <rabbitmq:direct-exchange name="confirm_exchange">
+        <rabbitmq:bindings>
+            <rabbitmq:binding queue="confirm_queue"/>
+        </rabbitmq:bindings>
+    </rabbitmq:direct-exchange>
+    <!--qos-->
+    <rabbitmq:queue id="qos_queue" name="qos_queue"/>
+    <rabbitmq:direct-exchange name="qos_exchange">
+        <rabbitmq:bindings>
+            <rabbitmq:binding queue="qos_queue"/>
+        </rabbitmq:bindings>
+    </rabbitmq:direct-exchange>
+
+    <!--    ttl-->
+    <rabbitmq:queue name="ttl_queue" id="ttl_queue">
+        <rabbitmq:queue-arguments>
+            <entry key="x-message-ttl" value="10000" value-type="java.lang.Integer"/>
+        </rabbitmq:queue-arguments>
+    </rabbitmq:queue>
+    <rabbitmq:topic-exchange name="ttl_exchange">
+        <rabbitmq:bindings>
+            <rabbitmq:binding pattern="ttl.#" queue="ttl_queue"/>
+        </rabbitmq:bindings>
+    </rabbitmq:topic-exchange>
+    <!--    dlx死信队列-->
+    <!--    1.声明正常队列-->
+    <rabbitmq:queue name="dlx_queue_normal" id="dlx_queue_normal">
+        <rabbitmq:queue-arguments>
+            <!--            交换机名称-->
+            <entry key="x-dead-letter-exchange" value="dlx_exchange_dead"/>
+            <!--            路由名称-->
+            <entry key="x-dead-letter-routing-key" value="dlx.dead.hello"/>
+            <!--            过期时间-->
+            <entry key="x-message-ttl" value="10000" value-type="java.lang.Integer"/>
+            <!--            最大长度-->
+            <entry key="x-max-length" value="10" value-type="java.lang.Integer"/>
+        </rabbitmq:queue-arguments>
+    </rabbitmq:queue>
+    <rabbitmq:topic-exchange name="dlx_exchange_normal" id="dlx_exchange_normal">
+        <rabbitmq:bindings>
+            <rabbitmq:binding pattern="dlx.normal.#" queue="dlx_queue_normal"/>
+        </rabbitmq:bindings>
+    </rabbitmq:topic-exchange>
+    <!--    2.声明死信队列-->
+    <rabbitmq:queue name="dlx_queue_dead" id="dlx_queue_dead"/>
+    <rabbitmq:topic-exchange name="dlx_exchange_dead" id="dlx_exchange_dead">
+        <rabbitmq:bindings>
+            <rabbitmq:binding pattern="dlx.dead.#" queue="dlx_queue_dead"/>
+        </rabbitmq:bindings>
+    </rabbitmq:topic-exchange>
+</beans>

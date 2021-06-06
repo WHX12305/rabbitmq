@@ -20,8 +20,5 @@ public class ConsumerTest {
 
     @Test
     public void test(){
-        while (true){
-
-        }
     }
 }

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="143d1860-6b43-4a7c-8d7e-eba2c4b8c0de" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../consumers/src/main/java/cn/keepyoursmile/AckListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../consumers/src/main/java/cn/keepyoursmile/DlxListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../consumers/src/main/java/cn/keepyoursmile/QosListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/rabbitmq.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/spring-rabbitmq-producer.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/keepyoursmile/ProductTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../rabbitmq-springboot/producers/src/main/java/cn/keepyoursmile/ProducerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../rabbitmq-springboot/producers/src/main/java/cn/keepyoursmile/config/RabbitmqConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../rabbitmq-springboot/producers/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../rabbitmq-springboot/producers/src/test/java/cn/keepyoursmile/ProducerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/helloworld/ConsumerClient$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/helloworld/ConsumerClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/pubsub/ConsumerClient1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/pubsub/ConsumerClient1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/pubsub/ConsumerClient2$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/pubsub/ConsumerClient2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/routing/ConsumerClient1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/routing/ConsumerClient1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/routing/ConsumerClient2$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/routing/ConsumerClient2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/topics/ConsumerClient1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/topics/ConsumerClient1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/topics/ConsumerClient2$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/topics/ConsumerClient2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/workqueues/ConsumerClient1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/workqueues/ConsumerClient1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/workqueues/ConsumerClient2$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/consumer/target/classes/cn/keepyoursmlie/workqueues/ConsumerClient2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/producer/target/classes/cn/keepyoursmile/helloworld/ProducerClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/producer/target/classes/cn/keepyoursmile/pubsub/ProducerClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/producer/target/classes/cn/keepyoursmile/routing/ProducerClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/producer/target/classes/cn/keepyoursmile/topics/ProducerClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rabbitmq-demo/producer/target/classes/cn/keepyoursmile/workqueues/ProducerClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumers/src/main/resources/spring-rabbitmq-consumer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../consumers/src/main/resources/spring-rabbitmq-consumer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumers/src/test/java/cn/keepyoursmile/ConsumerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../consumers/src/test/java/cn/keepyoursmile/ConsumerTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1tHFPpQC1ulN4AkBufz7TrV8Gw7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+  </component>
+  <component name="RunManager" selected="JUnit.ProductTest.testDead">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductTest.testConfirm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="producers" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.keepyoursmile.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.keepyoursmile" />
+      <option name="MAIN_CLASS_NAME" value="cn.keepyoursmile.ProductTest" />
+      <option name="METHOD_NAME" value="testConfirm" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductTest.testDead" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="producers" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.keepyoursmile.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.keepyoursmile" />
+      <option name="MAIN_CLASS_NAME" value="cn.keepyoursmile.ProductTest" />
+      <option name="METHOD_NAME" value="testDead" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductTest.testQos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="producers" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.keepyoursmile.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.keepyoursmile" />
+      <option name="MAIN_CLASS_NAME" value="cn.keepyoursmile.ProductTest" />
+      <option name="METHOD_NAME" value="testQos" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductTest.testReturn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="producers" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.keepyoursmile.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.keepyoursmile" />
+      <option name="MAIN_CLASS_NAME" value="cn.keepyoursmile.ProductTest" />
+      <option name="METHOD_NAME" value="testReturn" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductTest.testTtl" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="producers" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.keepyoursmile.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.keepyoursmile" />
+      <option name="MAIN_CLASS_NAME" value="cn.keepyoursmile.ProductTest" />
+      <option name="METHOD_NAME" value="testTtl" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ProductTest.testDead" />
+        <item itemvalue="JUnit.ProductTest.testTtl" />
+        <item itemvalue="JUnit.ProductTest.testQos" />
+        <item itemvalue="JUnit.ProductTest.testConfirm" />
+        <item itemvalue="JUnit.ProductTest.testReturn" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="143d1860-6b43-4a7c-8d7e-eba2c4b8c0de" name="Default Changelist" comment="" />
+      <created>1622418087012</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622418087012</updated>
+      <workItem from="1622418088180" duration="11122000" />
+      <workItem from="1622646501817" duration="2587000" />
+      <workItem from="1622876072566" duration="3324000" />
+      <workItem from="1622961527392" duration="6809000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

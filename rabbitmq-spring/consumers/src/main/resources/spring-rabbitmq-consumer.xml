@@ -10,16 +10,16 @@
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/rabbit
         http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
-<!--    加载配置文件-->
+    <!--    加载配置文件-->
     <context:property-placeholder location="rabbitmq.properties"/>
-<!--    定义rabbitmqFactory-->
+    <!--    定义rabbitmqFactory-->
     <rabbitmq:connection-factory id="connectionFactory"
                                  host="${rabbitmq.host}"
                                  port="${rabbitmq.port}"
                                  username="${rabbitmq.username}"
                                  password="${rabbitmq.password}"
                                  virtual-host="${rabbitmq.virtual-host}"/>
-<!--    spring_queue队列对应监听器-->
+    <!--    spring_queue队列对应监听器-->
     <bean id="springQueueListener" class="cn.keepyoursmile.SpringQueueListener"/>
     <bean id="fanoutListener1" class="cn.keepyoursmile.SpringFanoutQueue1"/>
     <bean id="fanoutListener2" class="cn.keepyoursmile.SpringFanoutQueue2"/>
@@ -27,14 +27,30 @@
     <bean id="topicQueue2" class="cn.keepyoursmile.SpringTopicQueue2"/>
     <bean id="topicQueue3" class="cn.keepyoursmile.SpringTopicQueue3"/>
 
+    <bean id="ackQueue" class="cn.keepyoursmile.AckListener"/>
 
+    <bean id="qosQueue" class="cn.keepyoursmile.QosListener"/>
+
+    <bean id="dlxQueue" class="cn.keepyoursmile.DlxListener"/>
     <!--    监听器-->
-    <rabbitmq:listener-container connection-factory="connectionFactory" auto-declare="true">
+    <rabbitmq:listener-container connection-factory="connectionFactory">
         <rabbitmq:listener ref="springQueueListener" queue-names="spring_queue"/>
         <rabbitmq:listener ref="fanoutListener1" queue-names="spring_fanout_queue_1"/>
         <rabbitmq:listener ref="fanoutListener2" queue-names="spring_fanout_queue_2"/>
         <rabbitmq:listener ref="topicQueue1" queue-names="spring_topic_queue_1"/>
         <rabbitmq:listener ref="topicQueue2" queue-names="spring_topic_queue_2"/>
         <rabbitmq:listener ref="topicQueue3" queue-names="spring_topic_queue_3"/>
+    </rabbitmq:listener-container>
+    <!--    具有消息确认机制的监听器  auto-declare="true"-->
+    <rabbitmq:listener-container connection-factory="connectionFactory" auto-declare="true">
+        <rabbitmq:listener ref="ackQueue" queue-names="confirm_queue"/>
+    </rabbitmq:listener-container>
+    <!--    具有消息确认机制的监听器  auto-declare="true"-->
+    <rabbitmq:listener-container connection-factory="connectionFactory" acknowledge="manual" prefetch="1">
+        <rabbitmq:listener ref="qosQueue" queue-names="qos_queue"/>
+    </rabbitmq:listener-container>
+    <!--    死信队列监听-->
+    <rabbitmq:listener-container connection-factory="connectionFactory" auto-declare="true">
+        <rabbitmq:listener ref="dlxQueue" queue-names="dlx_queue_normal"/>
     </rabbitmq:listener-container>
 </beans>
